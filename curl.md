@@ -32,7 +32,7 @@ euY8_yFrQYiVqor_4YQfoK:APA91bGxm4iOVAMQ8BSCJzSRE06IGj_EKs1kihEUgkuo7f8Y2nyHuclWX
 # Get Users
 ```
 curl --request GET \
-  --url_v3 'https://grindr.mobi/v3/cascade?nearbyGeoHash=6gytbnpe1y21&onlineOnly=true&photoOnly=false&faceOnly=false&notRecentlyChatted=false&sexualPositions=1&fresh=false&pageNumber=1&genders=1&favorites=false&showSponsoredProfiles=false&shuffle=false' \
+  --url 'https://grindr.mobi/v3/cascade?nearbyGeoHash=6gytbnpe1y21&onlineOnly=true&photoOnly=false&faceOnly=false&notRecentlyChatted=false&sexualPositions=1&fresh=false&pageNumber=1&genders=1&favorites=false&showSponsoredProfiles=false&shuffle=false' \
   --compressed \
   --header 'accept: application/json' \
   --header 'accept-encoding: gzip' \
@@ -46,3 +46,23 @@ curl --request GET \
   --header 'l-time-zone: Europe/Oslo' \
   --header 'user-agent: grindr3/25.5.0.136635;136635;Free;Android 14;22021211RG;Xiaomi'
 ```
+# Send Messages (WebSockets)
+# Need to check where does messageID comes from? I think it comes from the app.
+```
+curl --request POST \
+  --url 'https://grindr.mobi/v4/chat/conversation/{receiverProfileID}:{yourProfileID}/read/{unixtimestamp}:{messageID}' \
+  --compressed \
+  --header 'accept: application/json' \
+  --header 'accept-encoding: gzip' \
+  --header 'accept-language: en-US' \
+  --header 'authorization: Grindr3 [AUTHTOKEN]' \
+  --header 'connection: Keep-Alive' \
+  --header 'content-length: 0' \
+  --header 'host: grindr.mobi' \
+  --header 'l-device-info: 2938f76cff50af57;GLOBAL;2;2069590016;2277x1080;a9ffffa4-2b0e-479d-b3db-ae117c0a9686' \
+  --header 'l-grindr-roles: []' \
+  --header 'l-locale: en_US' \
+  --header 'l-time-zone: Europe/Oslo' \
+  --header 'user-agent: grindr3/25.5.0.136635;136635;Free;Android 14;22021211RG;Xiaomi'
+  ``` 
+  

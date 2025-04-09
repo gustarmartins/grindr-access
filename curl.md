@@ -3,7 +3,7 @@
 
 ```curl
 curl --request POST \
-  --url https://grindr.mobi/v3/sessions \
+  --url https://grindr.mobi/v5/sessions \
   --compressed \
   --header 'accept: application/json' \
   --header 'accept-encoding: gzip' \
@@ -11,12 +11,12 @@ curl --request POST \
   --header 'connection: Keep-Alive' \
   --header 'content-type: application/json; charset=UTF-8' \
   --header 'host: grindr.mobi' \
-  --header 'l-device-info: 2938f76cff50af57;GLOBAL;2;2069590016;2277x1080;a9ffffa4-2b0e-479d-b3db-ae117c0a9686' \
+  --header 'l-device-info: ac3d25ddc7d31a8c;GLOBAL;2;7982997534;2276x1080;00000000-0000-0000-0000-000000000000' \
   --header 'l-locale: en_US' \
   --header 'l-time-zone: Europe/Oslo' \
   --header 'requirerealdeviceinfo: true' \
-  --header 'user-agent: grindr3/9.17.3.118538;118538;Free;Android 14;sdk_gphone64_x86_64;Google' \
-  --data '{"email":"[EMAIL]","password":"[PASSWORD]","token":""}'
+  --header 'user-agent: grindr3/25.5.0.136635;136635;Free;Android 14;22021211RG;Xiaomi' \
+  --data '{"email":"[EMAIL]","password":"[PASSWORD]","token":"","geohash:""}' 
 ```
 
 returns
@@ -32,7 +32,7 @@ euY8_yFrQYiVqor_4YQfoK:APA91bGxm4iOVAMQ8BSCJzSRE06IGj_EKs1kihEUgkuo7f8Y2nyHuclWX
 # Get Users
 ```
 curl --request GET \
-  --url 'https://grindr.mobi/v1/cascade?nearbyGeoHash=9q9hvuskv2cf&onlineOnly=true&photoOnly=false&faceOnly=false&notRecentlyChatted=false&fresh=false&pageNumber=1&rightNow=false' \
+  --url_v3 'https://grindr.mobi/v3/cascade?nearbyGeoHash=6gytbnpe1y21&onlineOnly=true&photoOnly=false&faceOnly=false&notRecentlyChatted=false&sexualPositions=1&fresh=false&pageNumber=1&genders=1&favorites=false&showSponsoredProfiles=false&shuffle=false' \
   --compressed \
   --header 'accept: application/json' \
   --header 'accept-encoding: gzip' \
@@ -44,5 +44,5 @@ curl --request GET \
   --header 'l-grindr-roles: []' \
   --header 'l-locale: en_US' \
   --header 'l-time-zone: Europe/Oslo' \
-  --header 'user-agent: grindr3/9.17.3.118538;118538;Free;Android 14;sdk_gphone64_x86_64;Google'
+  --header 'user-agent: grindr3/25.5.0.136635;136635;Free;Android 14;22021211RG;Xiaomi'
 ```
